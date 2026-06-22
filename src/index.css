@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-trust: #2E8B57;
+  --color-trust-50: #F0F8F3;
+  --color-trust-100: #DCEFE3;
+  --color-trust-200: #B8DFC7;
+  --color-trust-300: #95CFAB;
+  --color-trust-400: #71BF8F;
+  --color-trust-500: #2E8B57;
+  --color-trust-600: #257047;
+  --color-trust-700: #1C5536;
+  --color-trust-800: #133A24;
+  --color-trust-900: #0A1F13;
+
+  --color-transparent: #1E88E5;
+  --color-transparent-50: #E3F2FD;
+  --color-transparent-100: #BBDEFB;
+  --color-transparent-200: #90CAF9;
+  --color-transparent-300: #64B5F6;
+  --color-transparent-400: #42A5F5;
+  --color-transparent-500: #1E88E5;
+  --color-transparent-600: #1976D2;
+  --color-transparent-700: #1565C0;
+  --color-transparent-800: #0D47A1;
+  --color-transparent-900: #0B3D91;
+
+  --color-warning: #FF9800;
+  --color-warning-50: #FFF3E0;
+  --color-warning-100: #FFE0B2;
+  --color-warning-200: #FFCC80;
+  --color-warning-300: #FFB74D;
+  --color-warning-400: #FFA726;
+  --color-warning-500: #FF9800;
+  --color-warning-600: #FB8C00;
+  --color-warning-700: #F57C00;
+  --color-warning-800: #EF6C00;
+  --color-warning-900: #E65100;
+
+  --color-cream: #FAF8F5;
+  --color-cream-50: #FEFDFC;
+  --color-cream-100: #FCFBF9;
+  --color-cream-200: #FAF8F5;
+  --color-cream-300: #F5F1EB;
+  --color-cream-400: #EDE8DF;
+  --color-cream-500: #E0D7C6;
+  --color-cream-600: #C9BCA3;
+  --color-cream-700: #A89877;
+  --color-cream-800: #877550;
+  --color-cream-900: #5E5037;
+
+  --color-ink: #2C3E50;
+  --color-ink-50: #F8FAFB;
+  --color-ink-100: #EBF0F3;
+  --color-ink-200: #D3DDE4;
+  --color-ink-300: #B0C1CF;
+  --color-ink-400: #6C889C;
+  --color-ink-500: #4A6579;
+  --color-ink-600: #2C3E50;
+  --color-ink-700: #243242;
+  --color-ink-800: #1C2835;
+  --color-ink-900: #141D27;
+
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-ink);
+  background-color: var(--color-cream);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif SC', Georgia, serif;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-cream-300 overflow-hidden;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:shadow-md hover:border-trust-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg bg-trust text-white font-medium transition-colors hover:bg-trust-600 active:bg-trust-700 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg bg-transparent border border-transparent-500 text-transparent-500 font-medium transition-colors hover:bg-transparent-50 active:bg-transparent-100;
+  }
+
+  .btn-warning {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg bg-warning text-white font-medium transition-colors hover:bg-warning-600 active:bg-warning-700;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-trust {
+    @apply badge bg-trust-100 text-trust-700;
+  }
+
+  .badge-transparent {
+    @apply badge bg-transparent-100 text-transparent-700;
+  }
+
+  .badge-warning {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+
+  .progress-bar {
+    @apply h-2 w-full bg-cream-300 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-trust transition-all duration-500 ease-out;
+  }
+
+  .section-title {
+    @apply text-2xl font-serif font-semibold text-ink mb-4;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
